@@ -41,15 +41,40 @@ Purpose     : GUIDEMO initialization
 
 #include "globals.h"
 #include "dialog.h"
+#include "GUI.h"
 
 WM_HWIN Window1;
 WM_HWIN Window2;
+WM_HWIN Window3;
+
+static U8 motor_open_flag; //电机开关标志 0-关 1-开
+static U8 sound_disable_flag; //静音标志 0-蜂鸣 1-静音
+static U8 sound_level; //声音报警等级 0-无报警 1-低等级 2-中等级 3-高等级
+static U8 SD_OK_Flag; //SD卡状态 0-异常 1-正常
+static U32 motor_open_time; //电机上电时间，以s为单位的RTC时间
+static U32 timestamp; //时间戳
+static U16 ADC_FLOW = 0; //流量原始数据
+static U16 ADC_MOTORSPEED = 0; //转速原始数据
+static struct calendar //日历
+{
+	U8 hour;
+	U8 min;
+	U8 sec;
+	U16 w_year;
+	U8 w_month;
+	U8 w_date;
+	U8 week;
+};
+
+
 
 void MainTask(void)
 {
+	
 	GUI_Init();//初始化emWin/ucGUI
 	//CreateFramewin(WM_HBKWIN); //创建窗体,父窗体是桌面背景
-	Window1 = CreateWindow1();
 	Window2 = CreateWindow2();
+	Window1 = CreateWindow1();
+	Window3 = CreateWindow3();
 	while (1) { GUI_Delay(20); } //调用GUI_Delay函数延时20MS(最终目的是调用GUI_Exec()函数)
 }

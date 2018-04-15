@@ -639,10 +639,13 @@
     <ClCompile Include="Sample\Tutorial\WIDGET_Amplifier\WIDGET_Amplifier.c">
       <Filter>Sample\Tutorial\WIDGET_Amplifier</Filter>
     </ClCompile>
-    <ClCompile Include="Application\Test_AlarmShow.c">
+    <ClCompile Include="Application\Test_AlarmShow_window2.c">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="Application\Test_DataShow.c">
+    <ClCompile Include="Application\Test_GuideMain_window1.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Test-GuideST1-window3.c">
       <Filter>Application</Filter>
     </ClCompile>
   </ItemGroup>

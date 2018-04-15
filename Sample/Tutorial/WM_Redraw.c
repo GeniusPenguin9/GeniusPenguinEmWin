@@ -38,11 +38,11 @@ Requirements: WindowManager - (x)
 */
 /*******************************************************************
 *
-*       _cbBkWindow
+*       _cbBkWindow 背景窗口的回调函数， WM_HBWIN为背景窗口句柄，包含整个LCD区域
 */
 static void _cbBkWindow(WM_MESSAGE* pMsg) {
   switch (pMsg->MsgId) {
-  case WM_PAINT:
+  case WM_PAINT: //重绘背景窗口
     GUI_ClearRect(0, 50, 319, 239);
   default:
     WM_DefaultProc(pMsg);
@@ -83,7 +83,7 @@ static void _MoveWindow(const char* pText) {
   //
   // Create foreground window
   //
-  hWnd = WM_CreateWindow(10, 50, 150, 100, WM_CF_SHOW, _cbWindow, 0);
+  hWnd = WM_CreateWindow(10, 50, 150, 100, WM_CF_SHOW, _cbWindow, 0); //此处窗口hWnd回调函数为_cbWindow
   GUI_Delay(500);
   //
   // Move foreground window
@@ -103,8 +103,8 @@ static void _MoveWindow(const char* pText) {
   // Delete foreground window
   //
   WM_DeleteWindow(hWnd);
-  WM_Invalidate(WM_HBKWIN);
-  GUI_Exec();
+  WM_Invalidate(WM_HBKWIN); //使背景窗口WM_HBWIN无效
+  GUI_Exec(); //重绘无效窗口，即WM_HBWIN
 }
 
 /*******************************************************************
@@ -124,7 +124,7 @@ static void _DemoRedraw(void) {
     //
     // Move a window over background
     //
-    _MoveWindow("Background has not been redrawn");
+    _MoveWindow("Background has not been redrawn"); //此处WM_HBWIN没有回调函数，出现残影
     //
     // Clear background
     //
@@ -133,7 +133,7 @@ static void _DemoRedraw(void) {
     //
     // Set callback for background window
     //
-    _cbOldBk = WM_SetCallback(WM_HBKWIN, _cbBkWindow);
+    _cbOldBk = WM_SetCallback(WM_HBKWIN, _cbBkWindow); //调用回调函数_cbBkWindow重绘背景
     //
     // Move a window over background
     //

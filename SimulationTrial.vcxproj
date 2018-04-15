@@ -143,9 +143,16 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Application\GUIDEMO_Start.c" />
-    <ClCompile Include="Application\Test_DataShow.c" />
-    <ClCompile Include="Application\Test_AlarmShow.c" />
+    <ClCompile Include="Application\GUIDEMO_Start.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Application\Test-GuideST1-window3.c" />
+    <ClCompile Include="Application\Test_GuideMain_window1.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Application\Test_AlarmShow_window2.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Config\GUIConf.c">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -1072,7 +1079,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application\globals.h" />
+    <ClInclude Include="Application\globals.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Config\GUIConf.h" />
     <ClInclude Include="Config\LCDConf.h" />
     <ClInclude Include="GUI\Include\BUTTON.h" />
@@ -1092,7 +1101,9 @@
     <ClInclude Include="GUI\Include\Global.h" />
     <ClInclude Include="GUI\Include\GRAPH.h" />
     <ClInclude Include="GUI\Include\GRAPH_Private.h" />
-    <ClInclude Include="GUI\Include\GUI.h" />
+    <ClInclude Include="GUI\Include\GUI.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="GUI\Include\GUI_ARRAY.h" />
     <ClInclude Include="GUI\Include\GUI_ARRAY_Private.h" />
     <ClInclude Include="GUI\Include\GUI_BMP_Private.h" />
