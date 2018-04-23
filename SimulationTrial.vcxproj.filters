@@ -639,13 +639,25 @@
     <ClCompile Include="Sample\Tutorial\WIDGET_Amplifier\WIDGET_Amplifier.c">
       <Filter>Sample\Tutorial\WIDGET_Amplifier</Filter>
     </ClCompile>
-    <ClCompile Include="Application\Test_AlarmShow_window2.c">
-      <Filter>Application</Filter>
-    </ClCompile>
     <ClCompile Include="Application\Test_GuideMain_window1.c">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="Application\Test-GuideST1-window3.c">
+    <ClCompile Include="Application\Test-GuideST1-window1_1.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Test-GuideST1-window1_2.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Test-GuideST1-window1_7.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Test_StateMachine.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Test_DataShow_window2.c">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Test_Settings.c">
       <Filter>Application</Filter>
     </ClCompile>
   </ItemGroup>
@@ -900,6 +912,12 @@
       <Filter>Sample\Tutorial\SIM_CustomBitmapView</Filter>
     </ClInclude>
     <ClInclude Include="Application\globals.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\Test_StateMachine.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\Test_Settings.h">
       <Filter>Application</Filter>
     </ClInclude>
   </ItemGroup>

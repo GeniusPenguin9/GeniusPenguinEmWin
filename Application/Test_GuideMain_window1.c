@@ -22,6 +22,7 @@
 #include "globals.h"
 #include "GUI.h"
 #include "WM.h"
+#include "Test_StateMachine.h"
 // USER END
 
 #include "DIALOG.h"
@@ -32,20 +33,17 @@
 *
 **********************************************************************
 */
-#define ID_WINDOW_0    (GUI_ID_USER + 0x00)
-#define ID_BUTTON_0    (GUI_ID_USER + 0x01)
-#define ID_BUTTON_1    (GUI_ID_USER + 0x02)
-#define ID_TEXT_0    (GUI_ID_USER + 0x04)
-#define ID_BUTTON_2    (GUI_ID_USER + 0x04)
-#define ID_BUTTON_3    (GUI_ID_USER + 0x05)
-#define ID_BUTTON_4    (GUI_ID_USER + 0x06)
-#define ID_TEXT_1    (GUI_ID_USER + 0x07)
-#define ID_BUTTON_5    (GUI_ID_USER + 0x08)
-#define ID_BUTTON_6    (GUI_ID_USER + 0x09)
-#define ID_MULTIEDIT_0    (GUI_ID_USER + 0x0B)
+#define ID_WINDOW_0    (GUI_ID_USER + 0x00) //GuideMainWindow
+#define ID_BUTTON_0    (GUI_ID_USER + 0x01) //GuideMain
+#define ID_BUTTON_1    (GUI_ID_USER + 0x02) //AlarmShow
+#define ID_TEXT_0    (GUI_ID_USER + 0x03) //PageName
+#define ID_BUTTON_4    (GUI_ID_USER + 0x04) //Skip
+#define ID_BUTTON_5    (GUI_ID_USER + 0x05) //PreviousStep
+#define ID_BUTTON_6    (GUI_ID_USER + 0x06) //NextStep
 
 
 // USER START (Optionally insert additional defines)
+
 // USER END
 
 /*********************************************************************
@@ -56,6 +54,9 @@
 */
 
 // USER START (Optionally insert additional static data)
+FocusableListItem fliSkip;
+FocusableListItem fliPrevious;
+FocusableListItem fliNext;
 // USER END
 
 /*********************************************************************
@@ -63,14 +64,12 @@
 *       _aDialogCreate
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
-  { WINDOW_CreateIndirect, "Window", ID_WINDOW_0, 0, 0, 800, 480, 0, 0x0, 0 },
+  { WINDOW_CreateIndirect, "GuideMainWindow", ID_WINDOW_0, 0, 0, 800, 480, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "GuideMain", ID_BUTTON_0, 667, 37, 80, 59, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "AlarmShow", ID_BUTTON_1, 669, 134, 80, 68, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Page1_GuideMain", ID_TEXT_0, 50, 30, 200, 50, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "Decrease", ID_BUTTON_2, 22, 451, 80, 20, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "Increase", ID_BUTTON_3, 115, 452, 80, 20, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "Confirm", ID_BUTTON_4, 207, 454, 80, 20, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "LastStep", ID_BUTTON_5, 560, 400, 80, 45, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "Skip", ID_BUTTON_4, 452, 400, 80, 45, 0, 0x0, 0 },
+  { BUTTON_CreateIndirect, "PreviousStep", ID_BUTTON_5, 560, 400, 80, 45, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "NextStep", ID_BUTTON_6, 668, 400, 80, 45, 0, 0x0, 0 },
   
   // USER START (Optionally insert additional widgets)
@@ -103,15 +102,19 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
   switch (pMsg->MsgId) {
   case WM_INIT_DIALOG:
     //
-    // Initialization of 'Window'
+    // Initialization of 'GuideMainWindow'
     //
     hItem = pMsg->hWin;
     // USER START (Optionally insert additional code for further widget initialization)
 	TEXT_SetFont(WM_GetDialogItem(pMsg->hWin, ID_TEXT_0), GUI_FONT_COMIC24B_1);
 	WINDOW_SetBkColor(hItem, GUI_LIGHTGRAY);
-
+	BUTTON_SetFocussable(WM_GetDialogItem(hItem, ID_BUTTON_4), 1);
+	BUTTON_SetFocusColor(WM_GetDialogItem(hItem, ID_BUTTON_4), GUI_RED);
 	BUTTON_SetFocussable(WM_GetDialogItem(hItem, ID_BUTTON_5), 1);
+	BUTTON_SetFocusColor(WM_GetDialogItem(hItem, ID_BUTTON_5), GUI_RED);
 	BUTTON_SetFocussable(WM_GetDialogItem(hItem, ID_BUTTON_6), 1);
+	BUTTON_SetFocusColor(WM_GetDialogItem(hItem, ID_BUTTON_6), GUI_RED);
+	WM_SetFocus(WM_GetDialogItem(hItem, ID_BUTTON_6));
     // USER END
     break;
   case WM_NOTIFY_PARENT:
@@ -141,17 +144,17 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
         break;
       case WM_NOTIFICATION_RELEASED:
 		  // USER START
-		  WM_HideWindow(Window1);
-		  WM_ShowWindow(Window2);
-		  BUTTON_SetBkColor(WM_GetDialogItem(Window2, ID_BUTTON_0), BUTTON_CI_UNPRESSED, BUTTON_GetDefaultBkColor(BUTTON_CI_UNPRESSED));
-		  BUTTON_SetBkColor(WM_GetDialogItem(Window2, ID_BUTTON_1), BUTTON_CI_UNPRESSED, GUI_WHITE);
+		  WM_HideWindow(GuideMainWindow);
+		  WM_ShowWindow(DataShowWindow);
+		  BUTTON_SetBkColor(WM_GetDialogItem(DataShowWindow, ID_BUTTON_0), BUTTON_CI_UNPRESSED, BUTTON_GetDefaultBkColor(BUTTON_CI_UNPRESSED));
+		  BUTTON_SetBkColor(WM_GetDialogItem(DataShowWindow, ID_BUTTON_1), BUTTON_CI_UNPRESSED, GUI_WHITE);
 		  // USER END
         break;
       // USER START (Optionally insert additional code for further notification handling)
       // USER END
       }
       break;
-	case ID_BUTTON_2: // Notifications sent by 'Decrease'
+	case ID_BUTTON_4: // Notifications sent by 'Skip'
 		switch (NCode) {
 		case WM_NOTIFICATION_CLICKED:
 			// USER START (Optionally insert code for reacting on notification message)
@@ -165,35 +168,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 			// USER END
 		}
 		break;
-	case ID_BUTTON_3: // Notifications sent by 'Increase'
-		switch (NCode) {
-		case WM_NOTIFICATION_CLICKED:
-			// USER START (Optionally insert code for reacting on notification message)
-			// USER END
-			break;
-		case WM_NOTIFICATION_RELEASED:
-			// USER START (Optionally insert code for reacting on notification message)
-			// USER END
-			break;
-			// USER START (Optionally insert additional code for further notification handling)
-			// USER END
-		}
-		break;
-	case ID_BUTTON_4: // Notifications sent by 'Confirm'
-		switch (NCode) {
-		case WM_NOTIFICATION_CLICKED:
-			// USER START (Optionally insert code for reacting on notification message)
-			// USER END
-			break;
-		case WM_NOTIFICATION_RELEASED:
-			// USER START (Optionally insert code for reacting on notification message)
-			// USER END
-			break;
-			// USER START (Optionally insert additional code for further notification handling)
-			// USER END
-		}
-		break;
-	case ID_BUTTON_5: // Notifications sent by 'LastStep'
+	case ID_BUTTON_5: // Notifications sent by 'PreviousStep'
 		switch (NCode) {
 		case WM_NOTIFICATION_CLICKED:
 			// USER START (Optionally insert code for reacting on notification message)
@@ -202,7 +177,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 			break;
 		case WM_NOTIFICATION_RELEASED:
 			// USER START (Optionally insert code for reacting on notification message)
-			
+			GSM_PreviousState();
 			// USER END
 			break;
 			// USER START (Optionally insert additional code for further notification handling)
@@ -217,6 +192,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 			break;
 		case WM_NOTIFICATION_RELEASED:
 			// USER START (Optionally insert code for reacting on notification message)
+			GSM_NextState();
 			// USER END
 			break;
 			// USER START (Optionally insert additional code for further notification handling)
@@ -232,19 +208,14 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
   case WM_KEY:
 	  hItem = pMsg->hWin;
 	  key_info = (WM_KEY_INFO*)pMsg->Data.p;
-	  if (key_info->Key == GUI_KEY_LEFT || key_info->Key == GUI_KEY_UP) {
-		  //WM_SetFocus(WM_GetDialogItem(hItem, ID_BUTTON_5));
-		  WM_SetFocusOnPrevChild(hItem);
-	  }
-	  else if (key_info->Key == GUI_KEY_RIGHT || key_info->Key == GUI_KEY_DOWN) {
-		  //WM_SetFocus(WM_GetDialogItem(hItem, ID_BUTTON_6));
-		  WM_SetFocusOnNextChild(hItem);
+	  if (SM_KeyProc(key_info, hItem)) {
+		  // Do nothing
 	  }
 	  else {
 		  WM_DefaultProc(pMsg);
 	  }
 	  break;
-  // USER END
+   //USER END
   default:
     WM_DefaultProc(pMsg);
     break;
@@ -262,14 +233,36 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 *       CreateWindow
 */
 WM_HWIN CreateWindow1(void);
+void InitFocusableItem(WM_HWIN hWin);
 WM_HWIN CreateWindow1(void) {
   WM_HWIN hWin;
 
   hWin = GUI_CreateDialogBox(_aDialogCreate, GUI_COUNTOF(_aDialogCreate), _cbDialog, WM_HBKWIN, 0, 0);
+  
+  InitFocusableItem(hWin);
+  
   return hWin;
 }
 
 // USER START (Optionally insert additional public code)
+void InitFocusableItem(WM_HWIN hWin)
+{
+	fliSkip.CurrentControl = WM_GetDialogItem(hWin, ID_BUTTON_4);
+	fliSkip.MainState = hWin;
+	fliSkip.GuideState = NULL;
+
+	fliPrevious.CurrentControl = WM_GetDialogItem(hWin, ID_BUTTON_5);
+	fliPrevious.MainState = hWin;
+	fliPrevious.GuideState = NULL;
+
+	fliNext.CurrentControl = WM_GetDialogItem(hWin, ID_BUTTON_6);
+	fliNext.MainState = hWin;
+	fliNext.GuideState = NULL;
+
+	SM_RegisterFocusableListItem(&fliSkip);
+	SM_RegisterFocusableListItem(&fliPrevious);
+	SM_RegisterFocusableListItem(&fliNext);
+}
 // USER END
 
 /*************************** End of file ****************************/

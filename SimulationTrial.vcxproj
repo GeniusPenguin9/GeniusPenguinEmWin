@@ -146,13 +146,21 @@
     <ClCompile Include="Application\GUIDEMO_Start.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Application\Test-GuideST1-window3.c" />
+    <ClCompile Include="Application\Test-GuideST1-window1_1.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Application\Test-GuideST1-window1_2.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Application\Test-GuideST1-window1_7.c" />
     <ClCompile Include="Application\Test_GuideMain_window1.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Application\Test_AlarmShow_window2.c">
+    <ClCompile Include="Application\Test_DataShow_window2.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Application\Test_Settings.c" />
+    <ClCompile Include="Application\Test_StateMachine.c" />
     <ClCompile Include="Config\GUIConf.c">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -1082,6 +1090,8 @@
     <ClInclude Include="Application\globals.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Application\Test_Settings.h" />
+    <ClInclude Include="Application\Test_StateMachine.h" />
     <ClInclude Include="Config\GUIConf.h" />
     <ClInclude Include="Config\LCDConf.h" />
     <ClInclude Include="GUI\Include\BUTTON.h" />
