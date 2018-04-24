@@ -93,6 +93,8 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     //
     // Initialization of 'Step 7'
     //
+	hItem = pMsg->hWin;
+	WINDOW_SetBkColor(hItem, GUI_WHITE);
     hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
     TEXT_SetFont(hItem, GUI_FONT_32B_ASCII);
     //

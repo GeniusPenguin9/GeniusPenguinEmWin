@@ -1,3 +1,3 @@
 
-TEXT.c:
-Wrong handle type or Object not init'ed in TEXT_LockH()
+GUI_Alloc.c:
+Dereferencing free block in GUI_ALLOC_h2p().

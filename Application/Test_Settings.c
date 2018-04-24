@@ -20,3 +20,4 @@ void IncreaseOriginalMotorSpeed() {
 void DecreaseOriginalMotorSpeed() {
 	SetOriginalMotorSpeed(iOriginalMotorSpeed - iMotorSpeedIncrement);
 }
+

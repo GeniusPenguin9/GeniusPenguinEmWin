@@ -45,6 +45,7 @@ Purpose     : GUIDEMO initialization
 
 WM_HWIN GuideMainWindow;
 WM_HWIN DataShowWindow;
+WM_HWIN StateBarWindow;
 WM_HWIN GStep1Window;
 WM_HWIN GStep2Window;
 WM_HWIN GStep7Window;

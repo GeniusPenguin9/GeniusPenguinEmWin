@@ -3,6 +3,12 @@
 #define MainStatesCount 4
 #define GuideStatesCount 7
 
+#define WM_MAIN_STATE_ENTER 0x0401
+#define WM_MAIN_STATE_LEAVE 0x0402
+#define WM_GUIDE_STATE_ENTER 0x0403
+#define WM_GUIDE_STATE_LEAVE 0x0404
+
+
 typedef struct MainStateMachine {
 	WM_HWIN States[MainStatesCount];
 	WM_HWIN CurrentState;
@@ -16,9 +22,11 @@ typedef struct GuideStateMachine {
 void SM_InitMainStateMachine();
 void SM_InitGuideStateMachine();
 
+WM_HWIN MSM_GetCurrentState();
 void MSM_SwitchState(WM_HWIN win);
-
+WM_HWIN GSM_GetCurrentState();
 void GSM_SwitchState(WM_HWIN win);
+
 void GSM_NextState();
 void GSM_PreviousState();
 
@@ -35,3 +43,5 @@ typedef struct FocusableListItem {
 } FocusableListItem;
 
 void SM_RegisterFocusableListItem(FocusableListItem* item);
+void GSM_DisableButton(HBWIN hItem);
+void GSM_EnableButton(HBWIN hItem);

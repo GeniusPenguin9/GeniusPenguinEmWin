@@ -1,5 +1,6 @@
 
 #include "globals.h"
+#include "GUI.h"
 
 MainStateMachine smMain;
 GuideStateMachine smGuide;
@@ -7,14 +8,21 @@ FocusableListItem * fliFocusableItemsHead = NULL;
 FocusableListItem * fliCurrentFocusItem = NULL;
 
 void SM_InitMainStateMachine () {
+	BUTTON_SetDefaultBkColor(GUI_WHITE, BUTTON_CI_UNPRESSED);
+	BUTTON_SetDefaultBkColor(GUI_BLUE, BUTTON_CI_PRESSED);
+	BUTTON_SetDefaultBkColor(GUI_GRAY, BUTTON_CI_DISABLED);
+	BUTTON_SetDefaultFocusColor(GUI_RED);
+
 	smMain.States[0] = GuideMainWindow = CreateWindow1();
 	smMain.States[1] = DataShowWindow = CreateWindow2();
-
+	StateBarWindow = CreateWindow4();
 	for (int i = 0; i < MainStatesCount; i++)
 		if (smMain.States[i] != NULL)
 			WM_HideWindow(smMain.States[i]);
 
 	MSM_SwitchState(GuideMainWindow);
+	WM_ShowWindow(StateBarWindow);
+	
 }
 
 void SM_InitGuideStateMachine() {
@@ -30,17 +38,37 @@ void SM_InitGuideStateMachine() {
 }
 
 void MSM_SwitchState(WM_HWIN win) {
-	if (smMain.CurrentState != NULL)
+	if (smMain.CurrentState != NULL) {
 		WM_HideWindow(smMain.CurrentState);
+		WM_SendMessageNoPara(smMain.CurrentState, WM_MAIN_STATE_LEAVE);
+	}
 	smMain.CurrentState = win;
 	WM_ShowWindow(win);
+	if (smMain.CurrentState != NULL)
+		WM_SendMessageNoPara(smMain.CurrentState, WM_MAIN_STATE_ENTER);
+}
+
+WM_HWIN MSM_GetCurrentState() {
+	return smMain.CurrentState;
 }
 
 void GSM_SwitchState(WM_HWIN win) {
-	if (smGuide.CurrentState != NULL) 
+	if (smGuide.CurrentState != NULL) {
 		WM_HideWindow(smGuide.CurrentState);
+		WM_SendMessageNoPara(smMain.CurrentState, WM_GUIDE_STATE_LEAVE);
+		WM_SendMessageNoPara(smGuide.CurrentState, WM_GUIDE_STATE_LEAVE);
+	}
 	smGuide.CurrentState = win;
 	WM_ShowWindow(win);
+	if (smGuide.CurrentState != NULL) {
+		WM_SendMessageNoPara(smMain.CurrentState, WM_GUIDE_STATE_ENTER);
+		WM_SendMessageNoPara(smGuide.CurrentState, WM_GUIDE_STATE_ENTER);
+	}
+}
+
+
+WM_HWIN GSM_GetCurrentState() {
+	return smGuide.CurrentState;
 }
 
 void GSM_NextState() {
@@ -63,6 +91,18 @@ void GSM_PreviousState() {
 			break;
 		}
 	}
+}
+
+void GSM_DisableButton(HBWIN hItem) {
+	WM_DisableWindow(hItem);
+	BUTTON_SetFocussable(hItem, 0);
+	BUTTON_SetBkColor(hItem, BUTTON_CI_UNPRESSED, GUI_GRAY);
+}
+
+void GSM_EnableButton(HBWIN hItem) {
+	WM_EnableWindow(hItem);
+	BUTTON_SetFocussable(hItem, 1);
+	BUTTON_SetBkColor(hItem, BUTTON_CI_UNPRESSED, GUI_WHITE);
 }
 
 void SM_RegisterFocusableListItem(FocusableListItem* item)
@@ -92,7 +132,8 @@ void SM_NextFocuableItem()
 		if (next == NULL) next = fliFocusableItemsHead;
 
 		if (next->MainState == smMain.CurrentState &&
-			(next->GuideState == NULL || next->GuideState == smGuide.CurrentState)) 
+			(next->GuideState == NULL || next->GuideState == smGuide.CurrentState) &&
+			WM_IsEnabled(next->CurrentControl))
 		{
 			fliCurrentFocusItem = next;
 			WM_SetFocus(fliCurrentFocusItem->CurrentControl);
@@ -118,7 +159,8 @@ void SM_PreviousFocuableItem()
 		}
 
 		if (previous->MainState == smMain.CurrentState &&
-			(previous->GuideState == NULL || previous->GuideState == smGuide.CurrentState))
+			(previous->GuideState == NULL || previous->GuideState == smGuide.CurrentState)&&
+			WM_IsEnabled(previous->CurrentControl))
 		{
 			fliCurrentFocusItem = previous;
 			WM_SetFocus(fliCurrentFocusItem->CurrentControl);
@@ -133,19 +175,22 @@ void SM_PreviousFocuableItem()
 
 int SM_KeyProc(WM_KEY_INFO* key_info, WM_HWIN hWin) 
 {
-	if (key_info->PressedCnt == 0 && 
-		(key_info->Key == GUI_KEY_LEFT || key_info->Key == GUI_KEY_UP)) 
+	if (key_info->PressedCnt == 0 && key_info->Key == GUI_KEY_LEFT) 
 	{
 		SM_PreviousFocuableItem();
 	}
-	else if (key_info->PressedCnt == 0 && 
-		(key_info->Key == GUI_KEY_RIGHT || key_info->Key == GUI_KEY_DOWN)) 
+	else if (key_info->PressedCnt == 0 && key_info->Key == GUI_KEY_RIGHT) 
 	{
 		SM_NextFocuableItem();
 	}
 	else if (key_info->PressedCnt == 0 && key_info->Key == GUI_KEY_ENTER) 
 	{
 		GUI_SendKeyMsg(hWin, 1);
+
+	}
+	else if (key_info->PressedCnt == 0 && key_info->Key == GUI_KEY_Num0)
+	{
+		MSM_SwitchState(GuideMainWindow);
 	}
 	else if (key_info->PressedCnt == 0 && key_info->Key == GUI_KEY_Num1)
 	{

@@ -55,8 +55,8 @@
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "DataShowWindow", ID_WINDOW_0, 0, 0, 800, 480, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "GuideMain", ID_BUTTON_0, 667, 37, 80, 59, 0, 0x0, 0 },
-  { BUTTON_CreateIndirect, "AlarmShow", ID_BUTTON_1, 669, 134, 80, 68, 0, 0x0, 0 },
+  //{ BUTTON_CreateIndirect, "GuideMain", ID_BUTTON_0, 667, 37, 80, 59, 0, 0x0, 0 },
+  //{ BUTTON_CreateIndirect, "AlarmShow", ID_BUTTON_1, 669, 134, 80, 68, 0, 0x0, 0 },
   { TEXT_CreateIndirect, "Page2_DataShow", ID_TEXT_0, 50, 30, 200, 50, 0, 0x0, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
@@ -81,6 +81,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
   int     NCode;
   int     Id;
   // USER START (Optionally insert additional variables)
+  WM_KEY_INFO *key_info;
   // USER END
 
   switch (pMsg->MsgId) {
@@ -90,7 +91,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     //
     hItem = pMsg->hWin;
 	TEXT_SetFont(WM_GetDialogItem(pMsg->hWin, ID_TEXT_0), GUI_FONT_COMIC24B_1);
-	WINDOW_SetBkColor(hItem,GUI_LIGHTGRAY);
+	WINDOW_SetBkColor(hItem,GUI_WHITE);
     //WINDOW_SetBkColor(hItem, GUI_MAKE_COLOR(0x00AC9FA3));
     // USER START (Optionally insert additional code for further widget initialization)
     // USER END
@@ -99,51 +100,56 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     Id    = WM_GetId(pMsg->hWinSrc);
     NCode = pMsg->Data.v;
     switch(Id) {
-    case ID_BUTTON_0: // Notifications sent by 'button1'
-      switch(NCode) {
-      case WM_NOTIFICATION_CLICKED:
-        // USER START (Optionally insert code for reacting on notification message)
-        // USER END
-        break;
-      case WM_NOTIFICATION_RELEASED:
-        // USER START (Optionally insert code for reacting on notification message)
-		  WM_HideWindow(DataShowWindow);
-		  WM_ShowWindow(GuideMainWindow);
-		  BUTTON_SetBkColor(WM_GetDialogItem(GuideMainWindow, ID_BUTTON_0), BUTTON_CI_UNPRESSED, GUI_WHITE);
-		  BUTTON_SetBkColor(WM_GetDialogItem(GuideMainWindow, ID_BUTTON_1), BUTTON_CI_UNPRESSED, BUTTON_GetDefaultBkColor(BUTTON_CI_UNPRESSED));
-
-        // USER END
-        break;
-      // USER START (Optionally insert additional code for further notification handling)
-      // USER END
-      }
-      break;
-    case ID_BUTTON_1: // Notifications sent by 'button2'
-      switch(NCode) {
-      case WM_NOTIFICATION_CLICKED:
-        // USER START (Optionally insert code for reacting on notification message)
-        // USER END
-        break;
-      case WM_NOTIFICATION_RELEASED:
-        // USER START (Optionally insert code for reacting on notification message)
-/*“≥√Ê«–ªª
-		  WM_HideWindow(GuideMainWindow);
-		  WM_ShowWindow(DataShowWindow);
-		  BUTTON_SetBkColor(WM_GetDialogItem(DataShowWindow, ID_BUTTON_0), BUTTON_CI_UNPRESSED, BUTTON_GetDefaultBkColor(BUTTON_CI_UNPRESSED));
-		  BUTTON_SetBkColor(WM_GetDialogItem(DataShowWindow, ID_BUTTON_1), BUTTON_CI_UNPRESSED, GUI_WHITE);
-		  */
-        // USER END
-        break;
-      // USER START (Optionally insert additional code for further notification handling)
-      // USER END
-      }
-      break;
-    // USER START (Optionally insert additional code for further Ids)
-    // USER END
+//    case ID_BUTTON_0: // Notifications sent by 'button1'
+//      switch(NCode) {
+//      case WM_NOTIFICATION_CLICKED:
+//        // USER START (Optionally insert code for reacting on notification message)
+//        // USER END
+//        break;
+//      case WM_NOTIFICATION_RELEASED:
+//        // USER START (Optionally insert code for reacting on notification message)
+//		  WM_HideWindow(DataShowWindow);
+//		  WM_ShowWindow(GuideMainWindow);
+//		  BUTTON_SetBkColor(WM_GetDialogItem(GuideMainWindow, ID_BUTTON_0), BUTTON_CI_UNPRESSED, GUI_WHITE);
+//		  BUTTON_SetBkColor(WM_GetDialogItem(GuideMainWindow, ID_BUTTON_1), BUTTON_CI_UNPRESSED, BUTTON_GetDefaultBkColor(BUTTON_CI_UNPRESSED));
+//
+//        // USER END
+//        break;
+//      // USER START (Optionally insert additional code for further notification handling)
+//      // USER END
+//      }
+//      break;
+//    case ID_BUTTON_1: // Notifications sent by 'button2'
+//      switch(NCode) {
+//      case WM_NOTIFICATION_CLICKED:
+//        // USER START (Optionally insert code for reacting on notification message)
+//        // USER END
+//        break;
+//      case WM_NOTIFICATION_RELEASED:
+//        // USER START (Optionally insert code for reacting on notification message)
+///*“≥√Ê«–ªª
+//		  WM_HideWindow(GuideMainWindow);
+//		  WM_ShowWindow(DataShowWindow);
+//		  BUTTON_SetBkColor(WM_GetDialogItem(DataShowWindow, ID_BUTTON_0), BUTTON_CI_UNPRESSED, BUTTON_GetDefaultBkColor(BUTTON_CI_UNPRESSED));
+//		  BUTTON_SetBkColor(WM_GetDialogItem(DataShowWindow, ID_BUTTON_1), BUTTON_CI_UNPRESSED, GUI_WHITE);
+//		  */
+//        // USER END
+//        break;
+    //  // USER START (Optionally insert additional code for further notification handling)
+    //  // USER END
+    //  }
+    //  break;
+    //// USER START (Optionally insert additional code for further Ids)
+    //// USER END
     }
     break;
   // USER START (Optionally insert additional message handling)
   // USER END
+  case WM_KEY:
+	  // USER START (Optionally insert additional message handling)
+
+	  // USER END
+	  break;
   default:
     WM_DefaultProc(pMsg);
     break;
