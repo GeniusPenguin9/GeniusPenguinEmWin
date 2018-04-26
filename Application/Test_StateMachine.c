@@ -13,13 +13,17 @@ void SM_InitMainStateMachine () {
 	BUTTON_SetDefaultBkColor(GUI_GRAY, BUTTON_CI_DISABLED);
 	BUTTON_SetDefaultFocusColor(GUI_RED);
 
-	smMain.States[0] = GuideMainWindow = CreateWindow1();
-	smMain.States[1] = DataShowWindow = CreateWindow2();
+	smMain.States[0] = LogoWindow = CreateWindowLogo();
+	smMain.States[1] = GuideMainWindow = CreateWindow1();
+	smMain.States[2] = DataShowWindow = CreateWindow2();
 	StateBarWindow = CreateWindow4();
+
 	for (int i = 0; i < MainStatesCount; i++)
 		if (smMain.States[i] != NULL)
 			WM_HideWindow(smMain.States[i]);
 
+	WM_HideWindow(StateBarWindow);
+	MSM_AutoSwitchState(LogoWindow);
 	MSM_SwitchState(GuideMainWindow);
 	WM_ShowWindow(StateBarWindow);
 	
@@ -48,6 +52,12 @@ void MSM_SwitchState(WM_HWIN win) {
 		WM_SendMessageNoPara(smMain.CurrentState, WM_MAIN_STATE_ENTER);
 }
 
+void MSM_AutoSwitchState(WM_HWIN win) {
+	WM_ShowWindow(win);
+	GUI_Delay(DelayTime);
+	WM_HideWindow(win);
+}
+
 WM_HWIN MSM_GetCurrentState() {
 	return smMain.CurrentState;
 }
@@ -65,7 +75,6 @@ void GSM_SwitchState(WM_HWIN win) {
 		WM_SendMessageNoPara(smGuide.CurrentState, WM_GUIDE_STATE_ENTER);
 	}
 }
-
 
 WM_HWIN GSM_GetCurrentState() {
 	return smGuide.CurrentState;

@@ -2,6 +2,7 @@
 
 #define MainStatesCount 4
 #define GuideStatesCount 7
+#define DelayTime 10000
 
 #define WM_MAIN_STATE_ENTER 0x0401
 #define WM_MAIN_STATE_LEAVE 0x0402
@@ -24,6 +25,7 @@ void SM_InitGuideStateMachine();
 
 WM_HWIN MSM_GetCurrentState();
 void MSM_SwitchState(WM_HWIN win);
+void MSM_AutoSwitchState(WM_HWIN win);
 WM_HWIN GSM_GetCurrentState();
 void GSM_SwitchState(WM_HWIN win);
 

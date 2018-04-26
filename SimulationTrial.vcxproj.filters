@@ -109,9 +109,6 @@
     <Filter Include="Sample\Tutorial\WIDGET_Amplifier">
       <UniqueIdentifier>{f6af6186-2d09-4651-94dd-3245a42c6328}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Application\Icon">
-      <UniqueIdentifier>{6708d71b-48a4-4ae0-9af8-448852f65f44}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Config\GUIConf.c">
@@ -666,8 +663,8 @@
     <ClCompile Include="Application\Test_StateBar-window4.c">
       <Filter>Application</Filter>
     </ClCompile>
-    <ClCompile Include="Icon\noSD.c">
-      <Filter>Application\Icon</Filter>
+    <ClCompile Include="Application\Test-LogoWindow.c">
+      <Filter>Application</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -928,9 +925,6 @@
     </ClInclude>
     <ClInclude Include="Application\Test_Settings.h">
       <Filter>Application</Filter>
-    </ClInclude>
-    <ClInclude Include="Icon\noSD.h">
-      <Filter>Application\Icon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
