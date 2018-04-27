@@ -109,6 +109,9 @@
     <Filter Include="Sample\Tutorial\WIDGET_Amplifier">
       <UniqueIdentifier>{f6af6186-2d09-4651-94dd-3245a42c6328}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Application\CNFont">
+      <UniqueIdentifier>{f9058afa-82de-47fb-bf54-dceaaed476df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Config\GUIConf.c">
@@ -665,6 +668,9 @@
     </ClCompile>
     <ClCompile Include="Application\Test-LogoWindow.c">
       <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Font\CNFont-Unicode-546.c">
+      <Filter>Application\CNFont</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

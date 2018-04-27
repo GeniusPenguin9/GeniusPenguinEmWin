@@ -1,0 +1,45 @@
+***  Installation Started 04/27/2018 13:20  ***
+Title: Font Converter Installation
+Source: D:\[3]R&D and QA\emWin\EmWin\Tool\SetupFontCvtDemo_V546.exe
+Made Dir: D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546
+File Copy: D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546\UNWISE.EXE
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: FontCvtDemoV5.46
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546\UNWISE.EXE D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+File Copy: D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546\FontCvtDemo.exe
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: FontCvtDemo V5.46
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Old: FontCvtDemoV5.46
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546\Unwise.exe
+RegDB Name: UninstallString
+RegDB Root: 2
+RegDB Old: D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546\UNWISE.EXE D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546\INSTALL.LOG
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: V5.46
+RegDB Name: DisplayVersion
+RegDB Root: 2
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: SEGGER Microcontroller Systeme GmbH
+RegDB Name: Publisher
+RegDB Root: 2
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: www.segger.com 
+RegDB Name: URLInfoAbout
+RegDB Root: 2
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: support@segger.com
+RegDB Name: Contact
+RegDB Root: 2
+RegDB Key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FontCvtDemoV5.46
+RegDB Val: D:\[3]R&D and QA\emWin\EmWin\Tool\FontCvtDemoV546\FontCvtDemo.exe
+RegDB Name: DisplayIcon
+RegDB Root: 2
+User Rights: Admin

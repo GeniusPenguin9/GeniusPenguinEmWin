@@ -26,6 +26,7 @@
 #include "DIALOG.h"
 
 
+
 /*********************************************************************
 *
 *       Defines
@@ -47,6 +48,8 @@
 */
 
 // USER START (Optionally insert additional static data)
+extern GUI_CONST_STORAGE GUI_FONT GUI_FontCNFont;
+//const char pdname[] = { "\xe4\xbb\x8b\xe5\x85\xa5\xe5\xbc\x8f\xe7\xa3\x81\xe5\x8a\x9b\xe7\xa6\xbb\xe5\xbf\x83\xe8\xa1\x80\xe6\xb3\xb5" };
 // USER END
 
 /*********************************************************************
@@ -90,8 +93,8 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     // Initialization of 'CpName'
     //
     hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
-    TEXT_SetText(hItem, "CardioPower");
-    TEXT_SetFont(hItem, GUI_FONT_32_1);
+	TEXT_SetFont(hItem, &GUI_FontCNFont);
+    TEXT_SetText(hItem, "\xe4\xbb\x8b\xe5\x85\xa5\xe5\xbc\x8f\xe7\xa3\x81\xe5\x8a\x9b\xe7\xa6\xbb\xe5\xbf\x83\xe8\xa1\x80\xe6\xb3\xb5");
     TEXT_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
     // USER START (Optionally insert additional code for further widget initialization)
     // USER END

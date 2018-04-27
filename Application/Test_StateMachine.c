@@ -12,6 +12,7 @@ void SM_InitMainStateMachine () {
 	BUTTON_SetDefaultBkColor(GUI_BLUE, BUTTON_CI_PRESSED);
 	BUTTON_SetDefaultBkColor(GUI_GRAY, BUTTON_CI_DISABLED);
 	BUTTON_SetDefaultFocusColor(GUI_RED);
+	GUI_UC_SetEncodeUTF8();
 
 	smMain.States[0] = LogoWindow = CreateWindowLogo();
 	smMain.States[1] = GuideMainWindow = CreateWindow1();

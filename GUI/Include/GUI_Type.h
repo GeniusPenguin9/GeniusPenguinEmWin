@@ -143,7 +143,7 @@ struct GUI_REGISTER_EXIT {
 
 /* Translation list. Translates a character code into up to 2
    indices of images to display on top of each other;
-   'á' -> index('a'), index('´') */
+   '? -> index('a'), index('?) */
 typedef struct {
   I16P c0;
   I16P c1;

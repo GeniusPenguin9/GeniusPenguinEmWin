@@ -5,6 +5,7 @@
 #include "Test_StateMachine.h"
 #include "Test_Settings.h"
 
+
 #define GUI_KEY_Num0                0x30 
 #define GUI_KEY_Num1                0x31
 #define GUI_KEY_Num2                0x32
@@ -53,3 +54,5 @@ extern WM_HWIN LogoWindow;
 
 extern MainStateMachine smMain;
 extern GuideStateMachine smGuide;
+
+extern GUI_CONST_STORAGE GUI_FONT GUI_FontCNFont;
