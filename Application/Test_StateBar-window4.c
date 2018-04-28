@@ -19,6 +19,7 @@
 */
 
 // USER START (Optionally insert additional includes)
+#include "globals.h"
 // USER END
 
 #include "DIALOG.h"
@@ -30,11 +31,11 @@
 **********************************************************************
 */
 #define ID_WINDOW_0    (GUI_ID_USER + 0x00)
-#define ID_TEXT_0    (GUI_ID_USER + 0x01)
-#define ID_IMAGE_0    (GUI_ID_USER + 0x02)
-#define ID_IMAGE_1    (GUI_ID_USER + 0x03)
-#define ID_IMAGE_2    (GUI_ID_USER + 0x04)
-#define ID_IMAGE_3    (GUI_ID_USER + 0x05)
+#define ID_TEXT_0    (GUI_ID_USER + 0x01) //RealTime
+#define ID_IMAGE_0    (GUI_ID_USER + 0x02) //noSD
+#define ID_IMAGE_1    (GUI_ID_USER + 0x03) //power
+#define ID_IMAGE_2    (GUI_ID_USER + 0x04) //battery
+#define ID_IMAGE_3    (GUI_ID_USER + 0x05) //silence
 
 #define ID_IMAGE_0_IMAGE_0    0x00 //NoSD
 #define ID_IMAGE_1_IMAGE_0    0x01 //Power
@@ -42,6 +43,9 @@
 #define ID_IMAGE_3_IMAGE_0    0x03 //Silence
 
 // USER START (Optionally insert additional defines)
+
+
+
 // USER END
 
 /*********************************************************************
@@ -641,6 +645,9 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     break;
   // USER START (Optionally insert additional message handling)
   // USER END
+  case WM_TIMER:
+	hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
+	TM_RefreshTimer(hItem);
   default:
     WM_DefaultProc(pMsg);
     break;

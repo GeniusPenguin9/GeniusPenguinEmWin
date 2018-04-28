@@ -7,13 +7,34 @@ GuideStateMachine smGuide;
 FocusableListItem * fliFocusableItemsHead = NULL;
 FocusableListItem * fliCurrentFocusItem = NULL;
 
-void SM_InitMainStateMachine () {
-	BUTTON_SetDefaultBkColor(GUI_WHITE, BUTTON_CI_UNPRESSED);
+
+#define ID_TimerData 0
+#define ID_TimerTime 1
+
+void Globals_InitGlobal() {
+	/*设置Button默认式样*/
+	BUTTON_SetDefaultBkColor(GUI_WHITE, BUTTON_CI_UNPRESSED); 
 	BUTTON_SetDefaultBkColor(GUI_BLUE, BUTTON_CI_PRESSED);
 	BUTTON_SetDefaultBkColor(GUI_GRAY, BUTTON_CI_DISABLED);
 	BUTTON_SetDefaultFocusColor(GUI_RED);
-	GUI_UC_SetEncodeUTF8();
+	/*设置UTF8用于汉字解码*/
+	GUI_UC_SetEncodeUTF8(); 
+	/* 创建两个定时器，分别用于实时数据的刷新和状态栏（时间）的刷新 */
+	WM_SetCreateFlags(WM_CF_MEMDEV);
+	
+	//WM_CreateTimer(DataShowWindow, /* 接受信息的窗口的句柄 */
+	//	0, 	         /* 用户定义的Id。如果不对同一窗口使用多个定时器，此值可以设置为零。 */
+	//	20,                       /* 周期，此周期过后指定窗口应收到消息*/
+	//	0);	                     /* 留待将来使用，应为0 */
 
+	WM_CreateTimer(StateBarWindow, /* 接受信息的窗口的句柄 */
+		0, 	         /* 用户定义的Id。如果不对同一窗口使用多个定时器，此值可以设置为零。 */
+		20,                       /* 周期，此周期过后指定窗口应收到消息*/
+		0);	                     /* 留待将来使用，应为0 */
+}
+
+void SM_InitMainStateMachine () {
+	
 	smMain.States[0] = LogoWindow = CreateWindowLogo();
 	smMain.States[1] = GuideMainWindow = CreateWindow1();
 	smMain.States[2] = DataShowWindow = CreateWindow2();
@@ -183,6 +204,34 @@ void SM_PreviousFocuableItem()
 	}
 }
 
+void TM_RefreshData() {
+
+}
+
+void TM_RefreshTimer(HBWIN hItem) {
+	
+	/*调试，设置静态时间*/
+	RTCalendar.w_year = 2018;
+	RTCalendar.w_month = 11;
+	RTCalendar.w_date = 28;
+	RTCalendar.hour = 12;
+	RTCalendar.min = 53;
+	RTCalendar.sec = 29;
+	
+	char timer[30];
+	sprintf(timer,"%d/%d/%d %0.2d:%0.2d:%0.2d",
+		RTCalendar.w_year,
+		RTCalendar.w_month,
+		RTCalendar.w_date,
+		RTCalendar.hour,
+		RTCalendar.min,
+		RTCalendar.sec
+	);
+	
+	TEXT_SetText(hItem, "Change");
+	WM_RestartTimer(ID_TimerTime, 20); //重启定时器，新周期为20ms
+}
+
 int SM_KeyProc(WM_KEY_INFO* key_info, WM_HWIN hWin) 
 {
 	if (key_info->PressedCnt == 0 && key_info->Key == GUI_KEY_LEFT) 
@@ -201,6 +250,7 @@ int SM_KeyProc(WM_KEY_INFO* key_info, WM_HWIN hWin)
 	else if (key_info->PressedCnt == 0 && key_info->Key == GUI_KEY_Num0)
 	{
 		MSM_SwitchState(GuideMainWindow);
+		GSM_SwitchState(GStep1Window);
 	}
 	else if (key_info->PressedCnt == 0 && key_info->Key == GUI_KEY_Num1)
 	{
@@ -211,3 +261,4 @@ int SM_KeyProc(WM_KEY_INFO* key_info, WM_HWIN hWin)
 	}
 	return 1;
 }
+

@@ -1,8 +1,8 @@
 #pragma once
 
-#define MainStatesCount 4
+#define MainStatesCount 4 //Guide & Data & Alarm & Setting
 #define GuideStatesCount 7
-#define DelayTime 10000
+#define DelayTime 1000 //1sec
 
 #define WM_MAIN_STATE_ENTER 0x0401
 #define WM_MAIN_STATE_LEAVE 0x0402
@@ -20,6 +20,7 @@ typedef struct GuideStateMachine {
 	WM_HWIN CurrentState;
 } GuideStateMachine;
 
+void Globals_InitGlobal();
 void SM_InitMainStateMachine();
 void SM_InitGuideStateMachine();
 
@@ -31,6 +32,9 @@ void GSM_SwitchState(WM_HWIN win);
 
 void GSM_NextState();
 void GSM_PreviousState();
+
+void TM_RefreshData();
+void TM_RefreshTimer(HBWIN hItem);
 
 int SM_KeyProc(WM_KEY_INFO* key_info, WM_HWIN hWin);
 

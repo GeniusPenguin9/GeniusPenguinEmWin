@@ -38,7 +38,7 @@
 extern GUI_CONST_STORAGE GUI_FONT GUI_FontCNFont;
 
 /* Start of unicode area <CJK Unified Ideographs> */
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_4ECB[165] = { /* code 4ECB */
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_4ECB[165] = { /* code 4ECB 介 */
   ________,________,________,________,________,
   ________,______X_,________,________,________,
   ________,______XX,XX______,________,________,
@@ -73,77 +73,77 @@ GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_4ECB[165] = { /* code
   ________,________,________,________,________,
   ________,________,________,________,________ };
 
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_5165[165] = { /* code 5165 */
-  XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,
-  X_______,________,________,________,_X______,
-  X_______,__XX____,________,________,_X______,
-  X_______,_XXXXX__,________,________,_X______,
-  X_______,__XXXXX_,________,________,_X______,
-  X_______,____XXXX,________,________,_X______,
-  X_______,_____XXX,X_______,________,_X______,
-  X_______,______XX,X_______,________,_X______,
-  X_______,_______X,XX______,________,_X______,
-  X_______,_______X,XX______,________,_X______,
-  X_______,_______X,XXX_____,________,_X______,
-  X_______,_______X,XXX_____,________,_X______,
-  X_______,______XX,XXXX____,________,_X______,
-  X_______,______XX,_XXX____,________,_X______,
-  X_______,_____XXX,__XXX___,________,_X______,
-  X_______,_____XXX,__XXX___,________,_X______,
-  X_______,____XXX_,___XXX__,________,_X______,
-  X_______,____XXX_,___XXX__,________,_X______,
-  X_______,___XXX__,____XXX_,________,_X______,
-  X_______,__XXXX__,____XXX_,________,_X______,
-  X_______,__XXX___,_____XXX,________,_X______,
-  X_______,_XXX____,_____XXX,X_______,_X______,
-  X_______,XXX_____,______XX,XX______,_X______,
-  X______X,XXX_____,______XX,XXX_____,_X______,
-  X_____XX,XX______,_______X,XXXX____,_X______,
-  X____XXX,X_______,________,XXXXX___,_X______,
-  X__XXXXX,________,________,_XXXXXX_,_X______,
-  X_XXXXX_,________,________,__XXXXX_,_X______,
-  X_XXXX__,________,________,___XXX__,_X______,
-  X__XX___,________,________,________,_X______,
-  X_______,________,________,________,_X______,
-  X_______,________,________,________,_X______,
-  XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX};
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_5165[165] = { /* code 5165 入 */
+  ________,________,________,________,________,
+  ________,________,________,________,________,
+  ________,__XX____,________,________,________,
+  ________,_XXXXX__,________,________,________,
+  ________,__XXXXX_,________,________,________,
+  ________,____XXXX,________,________,________,
+  ________,_____XXX,X_______,________,________,
+  ________,______XX,X_______,________,________,
+  ________,_______X,XX______,________,________,
+  ________,_______X,XX______,________,________,
+  ________,_______X,XXX_____,________,________,
+  ________,_______X,XXX_____,________,________,
+  ________,______XX,XXXX____,________,________,
+  ________,______XX,_XXX____,________,________,
+  ________,_____XXX,__XXX___,________,________,
+  ________,_____XXX,__XXX___,________,________,
+  ________,____XXX_,___XXX__,________,________,
+  ________,____XXX_,___XXX__,________,________,
+  ________,___XXX__,____XXX_,________,________,
+  ________,__XXXX__,____XXX_,________,________,
+  ________,__XXX___,_____XXX,________,________,
+  ________,_XXX____,_____XXX,X_______,________,
+  ________,XXX_____,______XX,XX______,________,
+  _______X,XXX_____,______XX,XXX_____,________,
+  ______XX,XX______,_______X,XXXX____,________,
+  _____XXX,X_______,________,XXXXX___,________,
+  ___XXXXX,________,________,_XXXXXX_,________,
+  __XXXXX_,________,________,__XXXXX_,________,
+  __XXXX__,________,________,___XXX__,________,
+  ___XX___,________,________,________,________,
+  ________,________,________,________,________,
+  ________,________,________,________,________,
+  ________,________,________,________,________};
 
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_529B[165] = { /* code 529B */
-  XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,
-  X_______,______XX,________,________,_X______,
-  X_______,______XX,X_______,________,_X______,
-  X_______,______XX,X_______,________,_X______,
-  X_______,______XX,X_______,________,_X______,
-  X_______,______XX,X_______,________,_X______,
-  X_______,______XX,X_______,________,_X______,
-  X_______,______XX,X_______,________,_X______,
-  X_______,______XX,X_______,________,_X______,
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_529B[165] = { /* code 529B 力 */
+  ________,________,________,________,________,
+  ________,______XX,________,________,_X______,
+  ________,______XX,X_______,________,_X______,
+  ________,______XX,X_______,________,_X______,
+  ________,______XX,X_______,________,_X______,
+  ________,______XX,X_______,________,_X______,
+  ________,______XX,X_______,________,_X______,
+  ________,______XX,X_______,________,_X______,
+  ________,______XX,X_______,________,_X______,
   X__XXXXX,XXXXXXXX,XXXXXXXX,XXXXXX__,_X______,
   X__XXXXX,XXXXXXXX,XXXXXXXX,XXXXXX__,_X______,
-  X_______,______XX,X_______,___XXX__,_X______,
-  X_______,______XX,X_______,___XXX__,_X______,
-  X_______,______XX,X_______,___XXX__,_X______,
-  X_______,______XX,X_______,___XXX__,_X______,
-  X_______,______XX,________,___XXX__,_X______,
-  X_______,_____XXX,________,___XX___,_X______,
-  X_______,_____XXX,________,___XX___,_X______,
-  X_______,_____XXX,________,___XX___,_X______,
-  X_______,____XXX_,________,___XX___,_X______,
-  X_______,____XXX_,________,__XXX___,_X______,
-  X_______,___XXXX_,________,__XXX___,_X______,
-  X_______,___XXX__,________,__XXX___,_X______,
-  X_______,__XXX___,________,__XXX___,_X______,
-  X_______,_XXXX___,________,__XXX___,_X______,
-  X_______,XXXX____,________,__XXX___,_X______,
+  ________,______XX,X_______,___XXX__,_X______,
+  ________,______XX,X_______,___XXX__,_X______,
+  ________,______XX,X_______,___XXX__,_X______,
+  ________,______XX,X_______,___XXX__,_X______,
+  ________,______XX,________,___XXX__,_X______,
+  ________,_____XXX,________,___XX___,_X______,
+  ________,_____XXX,________,___XX___,_X______,
+  ________,_____XXX,________,___XX___,_X______,
+  ________,____XXX_,________,___XX___,_X______,
+  ________,____XXX_,________,__XXX___,_X______,
+  ________,___XXXX_,________,__XXX___,_X______,
+  ________,___XXX__,________,__XXX___,_X______,
+  ________,__XXX___,________,__XXX___,_X______,
+  ________,_XXXX___,________,__XXX___,_X______,
+  ________,XXXX____,________,__XXX___,_X______,
   X______X,XXX_____,________,_XXXX___,_X______,
   X____XXX,XX______,___X__XX,XXXX____,_X______,
   X___XXXX,X_______,____XXXX,XXXX____,_X______,
   X__XXXXX,________,____XXXX,XXX_____,_X______,
   X___XX__,________,_____XX_,________,_X______,
   X_______,________,________,________,_X______,
-  XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX};
+  ________,________,________,________,________ };
 
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_5F0F[165] = { /* code 5F0F */
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_5F0F[165] = { /* code 5F0F 式 */
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,
   X_______,________,_XXX____,________,_X______,
   X_______,________,_XXX___X,X_______,_X______,
@@ -178,7 +178,7 @@ GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_5F0F[165] = { /* code
   X_______,________,________,________,_X______,
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX};
 
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_5FC3[165] = { /* code 5FC3 */
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_5FC3[165] = { /* code 5FC3 心 */
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,
   X_______,_______X,________,________,_X______,
   X_______,_____XXX,X_______,________,_X______,
@@ -213,7 +213,7 @@ GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_5FC3[165] = { /* code
   X_______,________,________,________,_X______,
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX};
 
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_6CF5[165] = { /* code 6CF5 */
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_6CF5[165] = { /* code 6CF5 泵 */
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,
   X_______,________,________,________,_X______,
   X__X____,________,________,________,_X______,
@@ -248,7 +248,7 @@ GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_6CF5[165] = { /* code
   X_______,________,________,________,_X______,
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX};
 
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_78C1[165] = { /* code 78C1 */
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_78C1[165] = { /* code 78C1 磁 */
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,
   X_______,________,________,__X_____,_X______,
   X_______,________,XXX_____,__XXX___,_X______,
@@ -283,7 +283,7 @@ GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_78C1[165] = { /* code
   X_______,________,________,________,_X______,
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX};
 
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_79BB[165] = { /* code 79BB */
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_79BB[165] = { /* code 79BB 离 */
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,
   X_______,______XX,X_______,________,_X______,
   X_______,_______X,XX______,________,_X______,
@@ -318,7 +318,7 @@ GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_79BB[165] = { /* code
   X_______,________,________,________,_X______,
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX};
 
-GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_8840[165] = { /* code 8840 */
+GUI_CONST_STORAGE unsigned char acGUI_FontCNFontUnicode546_8840[165] = { /* code 8840 血 */
   XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,XXXXXXXX,
   X_______,________,________,________,_X______,
   X_______,_____X__,________,________,_X______,

@@ -32,7 +32,8 @@ typedef struct Calendar //ÈÕÀú
 	U8 w_month;
 	U8 w_date;
 	U8 week;
-};
+}Calendar;
+Calendar RTCalendar;
 
 WM_HWIN CreateWindow1(void);
 WM_HWIN CreateWindow2(void);

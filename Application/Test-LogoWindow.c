@@ -35,6 +35,8 @@
 */
 #define ID_WINDOW_0    (GUI_ID_USER + 0x00)
 #define ID_TEXT_0    (GUI_ID_USER + 0x01)
+#define ID_TEXT_1    (GUI_ID_USER + 0x02)
+#define ID_TEXT_2    (GUI_ID_USER + 0x03)
 
 
 // USER START (Optionally insert additional defines)
@@ -58,7 +60,9 @@ extern GUI_CONST_STORAGE GUI_FONT GUI_FontCNFont;
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "LogoWindow", ID_WINDOW_0, 1, 0, 800, 480, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "CpName", ID_TEXT_0, 0, 129, 800, 204, 0, 0x64, 0 },
+  { TEXT_CreateIndirect, "PdName", ID_TEXT_0, 0, 130, 800,100, 0, 0x64, 0 },
+  { TEXT_CreateIndirect, "CpName", ID_TEXT_1, 0, 230, 800, 50, 0, 0x64, 0 },
+  { TEXT_CreateIndirect, "Version", ID_TEXT_2, 0, 280, 800, 50, 0, 0x64, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
 };
@@ -90,12 +94,27 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 	hItem = pMsg->hWin;
 	WINDOW_SetBkColor(hItem, GUI_WHITE);
 	//
-    // Initialization of 'CpName'
+    // Initialization of 'PdName'
     //
     hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
 	TEXT_SetFont(hItem, &GUI_FontCNFont);
-    TEXT_SetText(hItem, "\xe4\xbb\x8b\xe5\x85\xa5\xe5\xbc\x8f\xe7\xa3\x81\xe5\x8a\x9b\xe7\xa6\xbb\xe5\xbf\x83\xe8\xa1\x80\xe6\xb3\xb5");
+    TEXT_SetText(hItem, 
+		"\xe4\xbb\x8b\xe5\x85\xa5\xe5\xbc\x8f\xe7\xa3\x81\xe5\x8a\x9b\xe7\xa6\xbb\xe5\xbf\x83\xe8\xa1\x80\xe6\xb3\xb5");//介入式磁力离心血泵
     TEXT_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
+	//
+	// Initialization of 'CpName'
+	//
+	hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_1);
+	TEXT_SetFont(hItem, GUI_FONT_32_1);
+	TEXT_SetText(hItem, "CardioPower");
+	TEXT_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
+	//
+	// Initialization of 'Version'
+	//
+	hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_2);
+	TEXT_SetFont(hItem, GUI_FONT_16_1);
+	TEXT_SetText(hItem, "Version 1.0.0.0");
+	TEXT_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
     // USER START (Optionally insert additional code for further widget initialization)
     // USER END
     break;

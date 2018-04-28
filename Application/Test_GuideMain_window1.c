@@ -67,7 +67,7 @@ FocusableListItem fliFinish;
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "GuideMainWindow", ID_WINDOW_0, 0, 0, 800, 480, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "Page1_GuideMain", ID_TEXT_0, 50, 30, 200, 50, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "GuideMain", ID_TEXT_0, 50, 30, 200, 50, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "Skip", ID_BUTTON_4, 344, 400, 80, 45, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "PreviousStep", ID_BUTTON_5, 452, 400, 80, 45, 0, 0x0, 0 },
   { BUTTON_CreateIndirect, "NextStep", ID_BUTTON_6, 560, 400, 80, 45, 0, 0x0, 0 },

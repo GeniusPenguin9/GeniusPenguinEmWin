@@ -57,7 +57,7 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
   { WINDOW_CreateIndirect, "DataShowWindow", ID_WINDOW_0, 0, 0, 800, 480, 0, 0x0, 0 },
   //{ BUTTON_CreateIndirect, "GuideMain", ID_BUTTON_0, 667, 37, 80, 59, 0, 0x0, 0 },
   //{ BUTTON_CreateIndirect, "AlarmShow", ID_BUTTON_1, 669, 134, 80, 68, 0, 0x0, 0 },
-  { TEXT_CreateIndirect, "Page2_DataShow", ID_TEXT_0, 50, 30, 200, 50, 0, 0x0, 0 },
+  { TEXT_CreateIndirect, "DataShow", ID_TEXT_0, 50, 30, 200, 50, 0, 0x0, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
 };

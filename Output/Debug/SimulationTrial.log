@@ -12,15 +12,16 @@ d:\[3]r&d and qa\emwin\emwin\application\test_guidemain_window1.c(248): warning 
 d:\[3]r&d and qa\emwin\emwin\application\test_guidemain_window1.c(252): warning C4047: “=”:“GUI_HWIN”与“void *”的间接级别不同
 d:\[3]r&d and qa\emwin\emwin\application\test_guidemain_window1.c(256): warning C4047: “=”:“GUI_HWIN”与“void *”的间接级别不同
 d:\[3]r&d and qa\emwin\emwin\application\test_guidemain_window1.c(260): warning C4047: “=”:“GUI_HWIN”与“void *”的间接级别不同
+  Test_StateBar-window4.c
   Test_StateMachine.c
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(23): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(39): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(46): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(52): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
+d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(44): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
+d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(60): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
 d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(67): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(74): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(145): warning C4047: “==”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(172): warning C4047: “==”:“GUI_HWIN”与“void *”的间接级别不同
+d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(73): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
+d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(88): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
+d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(95): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
+d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(166): warning C4047: “==”:“GUI_HWIN”与“void *”的间接级别不同
+d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(193): warning C4047: “==”:“GUI_HWIN”与“void *”的间接级别不同
   正在生成代码...
   Test-LogoWindow.c
   SimulationTrial.vcxproj -> D:\[3]R&D and QA\emWin\EmWin\Exe\GUISimulationDebug.exe

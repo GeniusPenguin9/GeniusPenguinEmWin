@@ -17,9 +17,9 @@ void MainTask(void)
 	
 	GUI_Init();//初始化emWin/ucGUI
 	//CreateFramewin(WM_HBKWIN); //创建窗体,父窗体是桌面背景
+	Globals_InitGlobal();
 	SM_InitMainStateMachine();
 	SM_InitGuideStateMachine();
-	WM_ShowWindow(LogoWindow); //仅用于调试汉字显示过程
 
 	while (1) { GUI_Delay(20); } //调用GUI_Delay函数延时20MS(最终目的是调用GUI_Exec()函数)
 }
