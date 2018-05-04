@@ -26,8 +26,8 @@ void Globals_InitGlobal() {
 	//	0, 	         /* 用户定义的Id。如果不对同一窗口使用多个定时器，此值可以设置为零。 */
 	//	20,                       /* 周期，此周期过后指定窗口应收到消息*/
 	//	0);	                     /* 留待将来使用，应为0 */
-
-	WM_CreateTimer(StateBarWindow, /* 接受信息的窗口的句柄 */
+	WM_HTIMER hTimer;
+	hTimer = WM_CreateTimer(StateBarWindow, /* 接受信息的窗口的句柄 */
 		0, 	         /* 用户定义的Id。如果不对同一窗口使用多个定时器，此值可以设置为零。 */
 		20,                       /* 周期，此周期过后指定窗口应收到消息*/
 		0);	                     /* 留待将来使用，应为0 */
@@ -207,30 +207,30 @@ void SM_PreviousFocuableItem()
 void TM_RefreshData() {
 
 }
-
-void TM_RefreshTimer(HBWIN hItem) {
-	
-	/*调试，设置静态时间*/
-	RTCalendar.w_year = 2018;
-	RTCalendar.w_month = 11;
-	RTCalendar.w_date = 28;
-	RTCalendar.hour = 12;
-	RTCalendar.min = 53;
-	RTCalendar.sec = 29;
-	
-	char timer[30];
-	sprintf(timer,"%d/%d/%d %0.2d:%0.2d:%0.2d",
-		RTCalendar.w_year,
-		RTCalendar.w_month,
-		RTCalendar.w_date,
-		RTCalendar.hour,
-		RTCalendar.min,
-		RTCalendar.sec
-	);
-	
-	TEXT_SetText(hItem, "Change");
-	WM_RestartTimer(ID_TimerTime, 20); //重启定时器，新周期为20ms
-}
+//
+//void TM_RefreshTimer(HBWIN hItem) {
+//	
+//	/*调试，设置静态时间*/
+//	RTCalendar.w_year = 2018;
+//	RTCalendar.w_month = 11;
+//	RTCalendar.w_date = 28;
+//	RTCalendar.hour = 12;
+//	RTCalendar.min = 53;
+//	RTCalendar.sec = 29;
+//	
+//	char timer[30];
+//	sprintf(timer,"%d/%d/%d %0.2d:%0.2d:%0.2d",
+//		RTCalendar.w_year,
+//		RTCalendar.w_month,
+//		RTCalendar.w_date,
+//		RTCalendar.hour,
+//		RTCalendar.min,
+//		RTCalendar.sec
+//	);
+//	
+//	TEXT_SetText(hItem, "Change");
+//	WM_RestartTimer(ID_TimerTime, 20); //重启定时器，新周期为20ms
+//}
 
 int SM_KeyProc(WM_KEY_INFO* key_info, WM_HWIN hWin) 
 {

@@ -1,27 +1,6 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of GUIConf.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Config\GUIConf.c, Sample\Tutorial\MTOUCH_PictureViewer\GUIConf.c, Sample\Tutorial\MEMDEV_WindowEffects\GUIConf.c, Sample\Tutorial\WIDGET_Treeview\GUIConf.c.
 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of LCDConf.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Config\LCDConf.c, Sample\Tutorial\MOTION_IconSlide\LCDConf.c, Sample\Tutorial\MOTION_SmartPhoneMenu\LCDConf.c, Sample\Tutorial\MTOUCH_PictureViewer\LCDConf.c, Sample\Tutorial\MULTILAYER_IconSlide\LCDConf.c, Sample\Tutorial\MULTILAYER_PictureViewer\LCDConf.c, Sample\Tutorial\MULTILAYER_WinterAnimation\LCDConf.c, Sample\Tutorial\SIM_CustomBitmapView\LCDConf.c, Sample\Tutorial\ALPHA_DawBitmapHWAlpha\LCDConf.c, Sample\Tutorial\ALPHA_TransparentDialog\LCDConf.c, Sample\Tutorial\COLOR_DemoLUT\LCDConf.c, Sample\Tutorial\MEMDEV_ImageFlow\LCDConf.c, Sample\Tutorial\MEMDEV_ListWheelEffects\LCDConf.c, Sample\Tutorial\MEMDEV_WindowEffects\LCDConf.c, Sample\Tutorial\MULTILAYER_AlphaChromaMove\LCDConf.c, Sample\Tutorial\SKINNING_NestedModal\LCDConf.c, Sample\Tutorial\SKINNING_Notepad\LCDConf.c, Sample\Tutorial\VSCREEN_MultiPage\LCDConf.c, Sample\Tutorial\VSCREEN_RealTime\LCDConf.c, Sample\Tutorial\WIDGET_Amplifier\LCDConf.c, Sample\Tutorial\WIDGET_IconView\LCDConf.c, Sample\Tutorial\WIDGET_ListWheel\LCDConf.c, Sample\Tutorial\WIDGET_SchemeLarge\LCDConf.c, Sample\Tutorial\WIDGET_SchemeMedium\LCDConf.c, Sample\Tutorial\WIDGET_SchemeSmall\LCDConf.c.
 C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of SIMConf.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Config\SIMConf.c, Sample\Tutorial\MULTILAYER_IconSlide\SIMConf.c, Sample\Tutorial\MULTILAYER_PictureViewer\SIMConf.c, Sample\Tutorial\MULTILAYER_WinterAnimation\SIMConf.c, Sample\Tutorial\SIM_CustomBitmapView\SIMConf.c, Sample\Tutorial\ALPHA_DawBitmapHWAlpha\SIMConf.c, Sample\Tutorial\MULTILAYER_AlphaChromaMove\SIMConf.c, Sample\Tutorial\SIM_HardKey\SIMConf.c.
-  GUIDEMO_Start.c
-  Test-GuideST1-window1_1.c
-  Test-GuideST1-window1_2.c
-  Test-GuideST1-window1_7.c
-  Test_DataShow_window2.c
-d:\[3]r&d and qa\emwin\emwin\application\test_datashow_window2.c(84): warning C4101: “key_info”: 未引用的局部变量
-  Test_GuideMain_window1.c
-d:\[3]r&d and qa\emwin\emwin\application\test_guidemain_window1.c(248): warning C4047: “=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_guidemain_window1.c(252): warning C4047: “=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_guidemain_window1.c(256): warning C4047: “=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_guidemain_window1.c(260): warning C4047: “=”:“GUI_HWIN”与“void *”的间接级别不同
-  Test_StateBar-window4.c
-  Test_StateMachine.c
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(44): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(60): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(67): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(73): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(88): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(95): warning C4047: “!=”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(166): warning C4047: “==”:“GUI_HWIN”与“void *”的间接级别不同
-d:\[3]r&d and qa\emwin\emwin\application\test_statemachine.c(193): warning C4047: “==”:“GUI_HWIN”与“void *”的间接级别不同
-  正在生成代码...
-  Test-LogoWindow.c
+  TimerTest.c
+d:\[3]r&d and qa\emwin\emwin\timertest.c(34): warning C4013: “sprintf”未定义；假设外部返回 int
   SimulationTrial.vcxproj -> D:\[3]R&D and QA\emWin\EmWin\Exe\GUISimulationDebug.exe

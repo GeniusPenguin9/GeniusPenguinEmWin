@@ -672,6 +672,9 @@
     <ClCompile Include="Font\CNFont-Unicode-546.c">
       <Filter>Application\CNFont</Filter>
     </ClCompile>
+    <ClCompile Include="TimerTest.c">
+      <Filter>Application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config\GUIConf.h">
