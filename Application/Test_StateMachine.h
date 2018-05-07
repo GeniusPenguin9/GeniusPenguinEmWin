@@ -33,9 +33,6 @@ void GSM_SwitchState(WM_HWIN win);
 void GSM_NextState();
 void GSM_PreviousState();
 
-void TM_RefreshData();
-void TM_RefreshTimer(HBWIN hItem);
-
 int SM_KeyProc(WM_KEY_INFO* key_info, WM_HWIN hWin);
 
 

@@ -35,6 +35,7 @@ typedef struct Calendar //»’¿˙
 }Calendar;
 Calendar RTCalendar;
 
+
 WM_HWIN CreateWindow1(void);
 WM_HWIN CreateWindow2(void);
 WM_HWIN CreateWindow4(void);

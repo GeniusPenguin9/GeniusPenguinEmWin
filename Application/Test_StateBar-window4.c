@@ -46,7 +46,7 @@
 #define ID_IMAGE_4_IMAGE_0    0x04 //BatteryBlk
 
 // USER START (Optionally insert additional defines)
-
+char GetRealTime[30];
 
 
 // USER END
@@ -772,7 +772,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
     TEXT_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
     TEXT_SetFont(hItem, GUI_FONT_16_1);
-    TEXT_SetText(hItem, "YYYY/MM/DD HH:MM");
+    //TEXT_SetText(hItem, "YYYY/MM/DD HH:MM");
     //
     // Initialization of 'NoSD'
     //
@@ -808,11 +808,21 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
     break;
   // USER START (Optionally insert additional message handling)
   // USER END
+  case WM_PAINT:
+	  sprintf(GetRealTime, "%d/%0.2d/%0.2d %0.2d:%0.2d:%0.2d",
+		  RTCalendar.w_year,
+		  RTCalendar.w_month,
+		  RTCalendar.w_date,
+		  RTCalendar.hour,
+		  RTCalendar.min,
+		  RTCalendar.sec
+	  );
+	  TEXT_SetText(WM_GetDialogItem(pMsg->hWin, ID_TEXT_0), GetRealTime);
+	  break;
   case WM_TIMER:
-	/*hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_0);
-	TM_RefreshTimer(hItem);*/
-	  TEXT_SetText(WM_GetDialogItem(pMsg->hWin, ID_TEXT_0), "Change");
-	  WM_RestartTimer(pMsg->Data.v, 20);
+	  hItem = pMsg->hWin;
+	  WM_RestartTimer(pMsg->Data.v, 1000);
+	  WM_InvalidateWindow(hItem);
   default:
     WM_DefaultProc(pMsg);
     break;

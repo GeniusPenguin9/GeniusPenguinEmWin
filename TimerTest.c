@@ -15,11 +15,13 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 };
 
 int i = 0;
+
 static void _cbDialog(WM_MESSAGE * pMsg) {
 	WM_HWIN hItem;
 	WM_HWIN hWin;
 
 	char TextCont[2];
+	char TextContTime[10];
 	// USER START (Optionally insert additional variables)
 	// USER END
 
@@ -32,7 +34,8 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 		
 		i++;
 		sprintf(TextCont, "%d", i);
-		TEXT_SetText(hItem, TextCont);
+		sprintf(TextContTime, "%d", GUI_GetTime());
+		TEXT_SetText(hItem, TextContTime);
 		
 		break;
 		
@@ -46,6 +49,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 		break;
 	}
 }
+
 
 WM_HWIN CreateWindow(void);
 WM_HWIN CreateWindow(void) {
