@@ -11,7 +11,7 @@ WM_HWIN GStep2Window;
 WM_HWIN GStep7Window;
 WM_HWIN LogoWindow;
 
-
+void MainTask(void);
 void MainTask(void)
 {
 	
