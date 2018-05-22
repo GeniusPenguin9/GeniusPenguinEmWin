@@ -58,3 +58,5 @@ extern MainStateMachine smMain;
 extern GuideStateMachine smGuide;
 
 extern GUI_CONST_STORAGE GUI_FONT GUI_FontCNFont;
+
+extern void MainTask(void);
