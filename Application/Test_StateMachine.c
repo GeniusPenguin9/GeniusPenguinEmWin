@@ -12,9 +12,10 @@ FocusableListItem * fliCurrentFocusItem = NULL;
 #define ID_TimerTime 1
 
 void Globals_InitGlobal() {
+	GUI_Init();//初始化emWin/ucGUI
 	/*设置Button默认式样*/
 	BUTTON_SetDefaultBkColor(GUI_WHITE, BUTTON_CI_UNPRESSED); 
-	BUTTON_SetDefaultBkColor(GUI_BLUE, BUTTON_CI_PRESSED);
+	BUTTON_SetDefaultBkColor(GUI_LIGHTBLUE, BUTTON_CI_PRESSED);
 	BUTTON_SetDefaultBkColor(GUI_GRAY, BUTTON_CI_DISABLED);
 	BUTTON_SetDefaultFocusColor(GUI_RED);
 	/*设置UTF8用于汉字解码*/
@@ -36,10 +37,10 @@ void SM_InitMainStateMachine () {
 	StateBarWindow = CreateWindow4();
 	
 	WM_HTIMER hTimerTime;
-	hTimerTime = WM_CreateTimer(StateBarWindow, 0, 1000, 0);
+	hTimerTime = WM_CreateTimer(StateBarWindow, 0, 2000, 0);
 
 	WM_HTIMER hTimerData;
-	hTimerData = WM_CreateTimer(DataShowWindow, 0, 1000, 0);
+	hTimerData = WM_CreateTimer(DataShowWindow, 0, 2000, 0);
 
 
 	for (int i = 0; i < MainStatesCount; i++)

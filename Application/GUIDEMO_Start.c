@@ -15,7 +15,7 @@ WM_HWIN LogoWindow;
 void MainTask(void)
 {
 	
-	GUI_Init();//初始化emWin/ucGUI
+	
 	//CreateFramewin(WM_HBKWIN); //创建窗体,父窗体是桌面背景
 	Globals_InitGlobal();
 	SM_InitMainStateMachine();

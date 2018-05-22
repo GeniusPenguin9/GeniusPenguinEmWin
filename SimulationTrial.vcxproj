@@ -1109,6 +1109,7 @@
     <ClInclude Include="Application\globals.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Application\Test_Hardware.h" />
     <ClInclude Include="Application\Test_Settings.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>

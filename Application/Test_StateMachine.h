@@ -1,7 +1,8 @@
 #pragma once
 
 #define MainStatesCount 4 //Guide & Data & Alarm & Setting
-#define GuideStatesCount 7
+#define GuideStatesCount 7 //7Step
+#define BatteryStatesCount 6
 #define DelayTime 1000 //1sec
 
 #define WM_MAIN_STATE_ENTER 0x0401
@@ -48,3 +49,9 @@ typedef struct FocusableListItem {
 void SM_RegisterFocusableListItem(FocusableListItem* item);
 void GSM_DisableButton(HBWIN hItem);
 void GSM_EnableButton(HBWIN hItem);
+
+typedef struct BatteryStateItem {
+	WM_HWIN CurrentBatterState;
+	WM_HWIN Source;
+	WM_HWIN RTElectricity;
+}BatteryStateItem;
